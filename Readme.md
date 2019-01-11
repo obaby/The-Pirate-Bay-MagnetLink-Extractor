@@ -1,5 +1,4 @@
-====
- [海盗湾] 磁力链接批量获取
+#[海盗湾] 磁力链接批量获取
 
  ![screenshot1](https://github.com/obaby/The-Pirate-Bay-MagnetLink-Extractor/blob/master/screenshot1.png)
 ---
