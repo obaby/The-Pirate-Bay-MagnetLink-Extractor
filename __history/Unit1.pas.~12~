@@ -1,0 +1,54 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, SkinCtrls, Vcl.StdCtrls, SkinBoxCtrls, RegularExpressions,
+  SkinHint, SkinData, DynamicSkinForm;
+
+type
+  TForm1 = class(TForm)
+    spSkinMemo1: TspSkinMemo;
+    spSkinButton1: TspSkinButton;
+    spSkinMemo2: TspSkinMemo;
+    spDynamicSkinForm1: TspDynamicSkinForm;
+    spSkinFrame1: TspSkinFrame;
+    spSkinData1: TspSkinData;
+    spCompressedStoredSkin1: TspCompressedStoredSkin;
+    spCompressedSkinList1: TspCompressedSkinList;
+    spResourceStrData1: TspResourceStrData;
+    spSkinHint1: TspSkinHint;
+    procedure spSkinButton1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+const
+  pattern = 'magnet\:\?[^\"]+';  {#'^magnet[A-Za-z0-9:?= ]+$';       }
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.spSkinButton1Click(Sender: TObject);
+var
+  matchs: TMatchCollection;
+ match: TMatch;
+ i:Integer;
+begin
+   matchs:=TRegEx.Matches(spSkinMemo1.Lines.Text,pattern);
+   spSkinMemo2.Lines.Clear;
+   ShowMessage(IntToStr(matchs.Count));
+   for match in matchs do
+   begin
+     spSkinMemo2.Lines.Add(match.Value);
+   end;
+end;
+
+end.
