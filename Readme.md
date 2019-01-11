@@ -13,3 +13,9 @@
 
 “¿¿µø‚£∫
 * Almediadev DynamicSkinForm v14.10 for D5-XE10.3 
+
+Link:
+
+* [obaby@mars](http://www.h4ck.org.cn)
+* [Findu](http://www.findu.co)
+
